@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Drag & Drop Mastery</title>
+    <meta name="description"
+        content="Una aplicación de gestión de tareas premium con interfaz Drag & Drop, diseñada para demostrar los fundamentos del desarrollo frontend moderno.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Task<span>Flow</span></h1>
+            <p class="subtitle">Organiza tus ideas con estilo</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="task-input-section">
+            <div class="glass-card input-group">
+                <input type="text" id="taskInput" placeholder="¿Qué tienes en mente hoy?" aria-label="Nueva tarea">
+                <button id="addTaskBtn" class="btn-primary">Añadir Tarea</button>
+            </div>
+        </section>
+
+        <section class="board" id="board">
+            <div class="column-wrapper">
+                <div class="column glass-card" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="column-header">
+                        <h2>Pendientes</h2>
+                        <span class="count">0</span>
+                    </div>
+                    <div class="tasks-container"></div>
+                </div>
+            </div>
+
+            <div class="column-wrapper">
+                <div class="column glass-card" id="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="column-header">
+                        <h2>En Proceso</h2>
+                        <span class="count">0</span>
+                    </div>
+                    <div class="tasks-container"></div>
+                </div>
+            </div>
+
+            <div class="column-wrapper">
+                <div class="column glass-card" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <div class="column-header">
+                        <h2>Terminado</h2>
+                        <span class="count">0</span>
+                    </div>
+                    <div class="tasks-container"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TaskFlow. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
